@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>swiper1</title>
+    <link rel="stylesheet" href="styles/swiper-3.4.1.min.css">
+    <style>
+        .swiper-container{
+            width: 600px;
+            height:auto;
+        }
+        .swiper-container img{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="images/b2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="images/b3.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="images/b4.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="images/b5.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- 分页器 -->
+    <div class="swiper-pagination"></div>
+
+    <!-- 导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- 滚动条 -->
+    <!--<div class="swiper-scrollbar"></div>-->
+</div>
+<script src="scripts/jquery-1.10.1.min.js"></script>
+<script src="scripts/swiper-3.4.1.jquery.min.js"></script>
+
+<script>
+    var mySwiper=new Swiper(".swiper-container",{
+            direction:"horizontal",
+            loop:true,
+            pagination: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+    //        scrollbar: '.swiper-scrollbar',
+    //        多长时间后开始动画，默认0
+            autoplay: 3000,
+    //        用户操作swiper之后，是否禁止autoplay。默认为true：停止
+            autoplayDisableOnInteraction : true,
+    //        第一次从哪张开始
+            initialSlide :2,
+    //        速度默认为300
+            speed:200,
+    //        如果设置为true，当切换到最后一个slide时停止自动切换。（loop模式下无效）
+    //        autoplayStopOnLast : false,
+    //        设置为true时，鼠标覆盖Swiper时指针会变成手掌形状，拖动时指针会变成抓手形状。
+            grabCursor : true
+        });
+    //        反方向轮播,会导致autoplayDisableOnInteraction失效！
+//    setInterval("mySwiper.slidePrev()", 2000);
+</script>
+</body>
+</html>

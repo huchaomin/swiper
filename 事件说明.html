@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>swiper事件说明</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+<h1>点击事件</h1>
+<table border="1">
+    <tr>
+        <td>preventClicks</td>
+        <td>当swiper在触摸时阻止默认事件（preventDefault），用于防止触摸时触发链接跳转.默认：true</td>
+    </tr>
+    <tr>
+        <td>preventClicksPropagation</td>
+        <td>阻止click冒泡。拖动Swiper时阻止click事件.默认：true</td>
+    </tr>
+    <tr>
+        <td>slideToClickedSlide</td>
+        <td>设置为true则点击slide会过渡到这个slide。</td>
+    </tr>
+</table>
+<h1>触发条件</h1>
+<table border="1">
+    <tr>
+        <td>touchRatio</td>
+        <td>触摸距离与slide滑动距离的比率.默认：1</td>
+    </tr>
+    <tr>
+        <td>simulateTouch</td>
+        <td>默认为true，Swiper接受鼠标点击、拖动。</td>
+    </tr>
+    <tr>
+        <td>onlyExternal</td>
+        <td>值为true时，slide无法拖动，只能使用扩展API函数例如slideNext()
+            或slidePrev()或slideTo()等改变slides滑动。</td>
+    </tr>
+    <tr>
+        <td>followFinger</td>
+        <td>触摸距离与slide滑动距离的比率.默认：1</td>
+    </tr>
+    <tr>
+        <td>shortSwipes</td>
+        <td>设置为false时，进行快速短距离的拖动无法触发Swiper。</td>
+    </tr>
+    <tr>
+        <td>longSwipesRatio</td>
+        <td>进行longSwipes时触发swiper所需要的最小拖动距离比例，即定义longSwipes距离比例。
+            值越大触发Swiper所需距离越大。最大值0.5。</td>
+    </tr>
+    <tr>
+        <td>threshold</td>
+        <td>拖动的临界值（单位为px），如果触摸距离小于该值滑块不会被拖动。</td>
+    </tr>
+    <tr>
+        <td>touchAngle</td>
+        <td>允许触发拖动的角度值。默认45度，即使触摸方向不是完全水平也能拖动slide。</td>
+    </tr>
+    <tr>
+        <td>longSwipes</td>
+        <td>设置为false时，进行长时间长距离的拖动无法触发Swiper。默认：true</td>
+    </tr>
+    <tr>
+        <td>longSwipesMs</td>
+        <td>定义longSwipes的时间（单位ms），超过则属于longSwipes</td>
+    </tr>
+    <tr>
+        <td>touchMoveStopPropagation</td>
+        <td>true时阻止touchmove冒泡事件。</td>
+    </tr>
+    <tr>
+        <td>resistance</td>
+        <td>边缘抵抗。当swiper已经处于第一个或最后一个slide时，继续拖动Swiper会离开边界，释放后弹回。边缘抵抗就是拖离边界时的抵抗力。
+            值为false时禁用，将slide拖离边缘时完全没有抗力。可以通过resistanceRatio设定抵抗力大小。</td>
+    </tr>
+    <tr>
+        <td>resistanceRatio</td>
+        <td>抵抗率。边缘抵抗力的大小比例。值越小抵抗越大越难将slide拖离边缘，0时完全无法拖离。</td>
+    </tr>
+    <tr>
+        <td>iOSEdgeSwipeDetection</td>
+        <td>设置为true开启IOS的UIWebView环境下的边缘探测。如果拖动是从屏幕边缘开始则不触发swiper。</td>
+    </tr>
+    <tr>
+        <td>iOSEdgeSwipeThreshold</td>
+        <td>IOS的UIWebView环境下的边缘探测距离。如果拖动小于边缘探测距离则不触发swiper。</td>
+    </tr>
+    <tr>
+        <td>passiveListeners</td>
+        <td>用来提升swiper在移动设备的中的scroll表现（Passive Event Listeners），
+            但是会和e.preventDefault冲突，所以有时候你需要关掉它。</td>
+    </tr>
+    <tr>
+        <td>touchReleaseOnEdges</td>
+        <td>当滑动到Swiper的边缘时释放滑动，可以用于同向Swiper的嵌套（移动端触摸有效）。</td>
+    </tr>
+</table>
+<h1>禁止切换</h1>
+<table border="1">
+    <tr>
+        <td>noSwiping</td>
+        <td>设为true时，可以在slide上（或其他元素）增加类名'swiper-no-swiping'，使该slide无法拖动，希望文字被选中时可以考虑使用。
+            该类名可通过noSwipingClass修改。</td>
+    </tr>
+    <tr>
+        <td>noSwipingClass</td>
+        <td>不可拖动块的类名，当noSwiping设置为true时，并且在slide加上此类名，slide无法拖动。</td>
+    </tr>
+    <tr>
+        <td>allowSwipeToNext</td>
+        <td>设置为false可禁止向右或下滑动。作用类似mySwiper.lockSwipeToNext()</td>
+    </tr>
+    <tr>
+        <td>allowSwipeToPrev</td>
+        <td>设为false可禁止向左或上滑动。作用类似mySwiper.lockSwipeToPrev()</td>
+    </tr>
+    <tr>
+        <td>swipeHandler</td>
+        <td>CSS选择器或者HTML元素。你只能拖动它进行swiping。</td>
+    </tr>
+</table>
+<h1>图片选择项</h1>
+<table border="1">
+    <tr>
+        <td>preloadImages</td>
+        <td>默认为true，Swiper会强制加载所有图片</td>
+    </tr>
+    <tr>
+        <td>updateOnImagesReady</td>
+        <td>当所有的内嵌图像（img标签）加载完成后Swiper会重新初始化。
+            使用此选项需要先开启preloadImages: true</td>
+    </tr>
+    <tr>
+        <td>lazyLoading</td>
+        <td>设为true开启图片延迟加载，使preloadImages无效。需要将图片img标签的src改写成data-src，并且增加类名swiper-lazy。背景图的延迟加载则增加属性data-background（3.0.7开始启用）。还可以为slide加一个预加载，div class="swiper-lazy-preloader"或者白色的div class="swiper-lazy-preloader swiper-lazy-preloader-white"当你设置了slidesPerView:'auto' 或者 slidesPerView > 1，还需要开启watchSlidesVisibility。</td>
+    </tr>
+    <tr>
+        <td>lazyLoadingInPrevNext</td>
+        <td>设置为true允许将延迟加载应用到最接近的slide的图片（前一个和后一个slide）</td>
+    </tr>
+    <tr>
+        <td>lazyLoadingInPrevNextAmount</td>
+        <td>设置在延迟加载图片时提前多少个slide。个数不可少于slidesPerView的数量。
+            默认为1，提前1个slide加载图片，例如切换到第三个slide时加载第四个slide里面的图片。</td>
+    </tr>
+    <tr>
+        <td>lazyLoadingOnTransitionStart</td>
+        <td>默认当过渡到slide后开始加载图片，如果你想在过渡一开始就加载，设置为true</td>
+    </tr>
+</table>
+<h1>loop模式</h1>
+<table border="1">
+    <tr>
+        <td>loop</td>
+        <td>设置为true 则开启loop模式。loop模式：会在原本slide前后复制若干个slide并在合适的时候切换，让Swiper看起来是循环的。
+            loop模式在与free模式同用时会产生抖动，因为free模式下没有复制slide的时间点。</td>
+    </tr>
+    <tr>
+        <td>loopAdditionalSlides</td>
+        <td>loop模式下会在slides前后复制若干个slide,，前后复制的个数不会大于原总个数。
+            默认为0，前后各复制1个。0,1,2 --> 2,0,1,2,0
+            例：取值为1，0,1,2 --> 1,2,0,1,2,0,1
+            例：取值为2或以上，0,1,2 --> 0,1,2,0,1,2,0,1,2</td>
+    </tr>
+    <tr>
+        <td>loopedSlides</td>
+        <td>在loop模式下使用slidesPerview:'auto',还需使用该参数设置所要用到的loop个数。</td>
+    </tr>
+</table>
+<h1>调焦模式</h1>
+<table border="1">
+    <tr>
+        <td>zoom</td>
+        <td>焦距功能：双击slide会放大，并且在手机端可双指触摸缩放。
+            需要在slide中增加类名swiper-zoom-container，结构如下：
+            <div class="swiper-slide"> <div class="swiper-zoom-container"> <img src="path/to/image"> </div> </div></td>
+    </tr>
+    <tr>
+        <td>zoomMax</td>
+        <td>最大缩放焦距（放大倍率）</td>
+    </tr>
+    <tr>
+        <td>zoomMin</td>
+        <td>最小缩放焦距（缩小倍率）</td>
+    </tr>
+    <tr>
+        <td>zoomToggle</td>
+        <td>是否允许双击缩放。
+            设置为false，不允许双击缩放，只允许手机端触摸缩放。</td>
+    </tr>
+</table>
+<h1>双向控制</h1>
+<table border="1">
+    <tr>
+        <td>control</td>
+        <td>设置为另外一个Swiper实例开始控制该Swiper</td>
+    </tr>
+    <tr>
+        <td>controlInverse</td>
+        <td>设置为true时控制方向倒转</td>
+    </tr>
+    <tr>
+        <td>controlBy</td>
+        <td>设定Swiper相互控制时的控制方式。当两个swiper的slide数量不一致时可用。
+            默认为'slide'，自身切换一个slide时，被控制方也切换一个slide。
+            可选：'container'，按自身slide在container中的位置比例进行控制。
+            例：有4个slide的swiper1控制有7个slide的swiper2，
+            设定'slide',swiper1的1,2,3,4对应控制的swiper2为1,2,3,7。
+            设定controlBy:'container',swiper1的1,2,3,4对应控制的swiper2为1,3,5,7。</td>
+    </tr>
+    <tr>
+        <td>normalizeSlideIndex</td>
+        <td>使你的活动块指示为最左边的那个slide（没开启centeredSlides时）</td>
+    </tr>
+</table>
+<h1>observer监视器</h1>
+<table border="1">
+    <tr>
+        <td>observer</td>
+        <td>启动动态检查器(OB/观众/观看者)，当改变swiper的样式（例如隐藏/显示）或者修改swiper的子元素时，自动初始化swiper。
+            默认false，不开启，可以使用update()方法更新。</td>
+    </tr>
+    <tr>
+        <td>observeParents</td>
+        <td>将observe应用于Swiper的父元素。当Swiper的父元素变化时，例如window.resize，Swiper更新</td>
+    </tr>
+</table>
+</body>
+</html>

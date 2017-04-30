@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>swiper7.5</title>
+    <link rel="stylesheet" href="styles/swiper-3.4.1.min.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        .swiper-container{
+            width:300px;
+            height:202px;
+            border:1px solid #aaa;
+            margin:0 auto;
+            position:relative;
+        }
+        .swiper-container .swiper-slide{
+            text-align:center;
+            height:40px;
+            line-height: 40px;
+        }
+        .swiper-container .swiper-select{
+            position:absolute;
+            background: #aaaaaa;
+            width:100%;
+            height:20%;
+            left:0;
+            top:40%
+        }
+    </style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">1</div>
+        <div class="swiper-slide">2</div>
+        <div class="swiper-slide">3</div>
+        <div class="swiper-slide">4</div>
+        <div class="swiper-slide">5</div>
+        <div class="swiper-slide">6</div>
+        <div class="swiper-slide">7</div>
+        <div class="swiper-slide">8</div>
+        <div class="swiper-slide">9</div>
+        <div class="swiper-slide">10</div>
+        <div class="swiper-slide">11</div>
+        <div class="swiper-slide">12</div>
+        <div class="swiper-slide">13</div>
+        <div class="swiper-slide">14</div>
+        <div class="swiper-slide">15</div>
+        <div class="swiper-slide">16</div>
+    </div>
+    <div class="swiper-select"></div>
+</div>
+<script src="scripts/jquery-1.10.1.min.js"></script>
+<script src="scripts/swiper-3.4.1.jquery.min.js"></script>
+
+<script>
+    var mySwiper2=new Swiper(".swiper-container",{
+        direction:"vertical",
+        loop:true,
+        speed:200,
+        grabCursor : true,
+        freeMode:true,
+//        惯性（设置为true下面的几项才会生效）
+        freeModeMomentum:true,
+//        惯性总距离
+        freeModeMomentumRatio:1,
+//        惯性速度
+        freeModeMomentumBounceRatio:2,
+//        自动贴合
+        freeModeSticky:true,
+        slidesPerView:5,
+        loopedSlides :16
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>swiper方法</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+<table border="3">
+    <tr>
+        <td>mySwiper.disableMousewheelControl()</td>
+        <td>禁止鼠标滑轮控制</td>
+    </tr>
+    <tr>
+        <td>mySwiper.enableMousewheelControl()</td>
+        <td>开启被disableMousewheelControl()禁止了的鼠标滑轮控制。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.enableKeyboardControl()</td>
+        <td>开启键盘控制。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.disableKeyboardControl()</td>
+        <td>禁止键盘控制。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.slideNext(runCallbacks, speed)</td>
+        <td>滑动到下一个滑块。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.slidePrev(runCallbacks, speed)</td>
+        <td>滑动到前一个滑块</td>
+    </tr>
+    <tr>
+        <td>mySwiper.slideTo(index, speed, runCallbacks)</td>
+        <td>Swiper切换到指定slide。
+            index:必选，num，指定将要切换到的slide的索引。
+            speed:可选，num(单位ms)，切换速度
+            runCallbacks:可选，boolean，设置为false时不会触发onSlideChange回调函数。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.startAutoplay()</td>
+        <td>开始自动切换。一般用来做“Play”按钮。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.stopAutoplay()</td>
+        <td>停止自动切换。一般用来制作“pause”按钮。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.destroy(deleteInstance, cleanupStyles)</td>
+        <td>销毁Swiper。销毁所有绑定的监听事件，移除鼠标键盘事件，释放浏览器内存。
+            deleteInstance:可选，设为false则不销毁Swiper对象，默认为true。
+            cleanupStyles:可选，设为true则清除所有swiper设定选项和样式，比如derection等，默认为false。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.getWrapperTranslate()</td>
+        <td>返回当前wrapper位移。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.setWrapperTranslate(translate)</td>
+        <td>手动设置wrapper的位移。
+            translate：必选，位移值（单位px）。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.removeSlide(index)</td>
+        <td>移除索引为index的slide。例如：
+
+            mySwiper.removeSlide(0); //移除第一个
+            mySwiper.removeSlide([0, 1]); //移除第一个和第二个</td>
+    </tr>
+    <tr>
+        <td>mySwiper.removeAllSlides()</td>
+        <td>移除所有slides。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.updateContainerSize()</td>
+        <td>这个方法会重新计算Swiper的尺寸</td>
+    </tr>
+    <tr>
+        <td>mySwiper.updateSlidesSize()</td>
+        <td>这个方法会重新计算Slides的数量，当你使用js来删除slide时可能会用到。
+            使用mySwiper.removeSlide来删除slide则会自动计算，无需使用此方法。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.updateProgress()</td>
+        <td>这个方法会重新计算Swiper的progress值</td>
+    </tr>
+    <tr>
+        <td>mySwiper.updatePagination()</td>
+        <td>更新分页器，如果你用js动态改变了slide可能会用得到</td>
+    </tr>
+    <tr>
+        <td>mySwiper.updateClasses()</td>
+        <td>更新slides和bullets的active/prev/next 类名</td>
+    </tr>
+    <tr>
+        <td>mySwiper.update(updateTranslate)</td>
+        <td>更新Swiper，这个方法包含了
+            updateContainerSize，updateSlidesSize，updateProgress，updatePagination，updateClasses方法。
+            可选参数：updateTranslate，默认false，设置为true则重新计算Wrapper的位移。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.onResize()</td>
+        <td>当你的浏览器尺寸发生变化Swiper会使用这个方法更新Swiper的尺寸和progress等，
+            这个方法有点像.update()，但是不需要指定参数。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.detachEvents()</td>
+        <td>移除所有监听事件。对比mySwiper.destroy()。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.attachEvents()</td>
+        <td>重新绑定所有监听事件。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.appendSlide(slides)</td>
+        <td>添加slide到slides的结尾。可以是HTML元素或slide数组，例
+            mySwiper.appendSlide('<div class="swiper-slide">Slide 10</div>')
+            mySwiper.appendSlide([ '<div class="swiper-slide">Slide 10</div>', '<div class="swiper-slide">Slide 11</div>' ]);</td>
+    </tr>
+    <tr>
+        <td>mySwiper.prependSlide(slides)</td>
+        <td>添加slide到slides的第一个位置。可以是HTML元素或slide数组，例
+            mySwiper.prependSlide('<div class="swiper-slide">Slide 0</div>')
+            mySwiper.prependSlide([ '<div class="swiper-slide">Slide 1</div>', '<div class="swiper-slide">Slide 2</div>' ]);</td>
+    </tr>
+    <tr>
+        <td>mySwiper.on(callback,handler)</td>
+        <td>添加回调函数或者事件句柄。是回调函数的另一种写法，去掉on即可。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.once(callback,handler)</td>
+        <td>添加回调函数或者事件句柄，这些事件只会执行一次</td>
+    </tr>
+    <tr>
+        <td>mySwiper.off(callback)</td>
+        <td>移除某个回调/事件</td>
+    </tr>
+    <tr>
+        <td>mySwiper.lockSwipes()</td>
+        <td>锁定Swiper，阻止其滑动。可以使用 mySwiper.unlockSwipes() 解锁</td>
+    </tr>
+    <tr>
+        <td>mySwiper.lockSwipeToNext()</td>
+        <td>锁定Swiper的向右或下滑动。可以使用 mySwiper.unlockSwipeToNext() 解锁。作用类似allowSwipeToNext</td>
+    </tr>
+    <tr>
+        <td>mySwiper.lockSwipeToPrev()</td>
+        <td>锁定Swiper的向左或上滑动。可以使用 mySwiper.unlockSwipeToPrev() 解锁。作用类似allowSwipeToPrev</td>
+    </tr>
+    <tr>
+        <td>mySwiper.reLoop()</td>
+        <td>重新对需要循环的slide个数进行计算，当你改变了slidesPerView参数时需要用到，
+            这个方法是mySwiper.destroyLoop()和 mySwiper.createLoop()的结合体。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.disableTouchControl()</td>
+        <td>禁止swiper触摸滑动，等于开启onlyExternal</td>
+    </tr>
+    <tr>
+        <td>mySwiper.enableTouchControl()</td>
+        <td>开启触摸滑动，等于关闭onlyExternal</td>
+    </tr>
+    <tr>
+        <td>mySwiper.unsetGrabCursor()</td>
+        <td>关闭鼠标的抓手形状。</td>
+    </tr>
+    <tr>
+        <td>mySwiper.setGrabCursor()</td>
+        <td>开启鼠标的抓手形状，相当于开启grabCursor。</td>
+    </tr>
+</table>
+</body>
+</html>

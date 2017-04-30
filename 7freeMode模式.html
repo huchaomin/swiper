@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>swiper7</title>
+    <link rel="stylesheet" href="styles/swiper-3.4.1.min.css">
+    <style>
+        .swiper-container{
+            width: 600px;
+            height:auto;
+        }
+        .swiper-container img{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="images/b2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="images/b3.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="images/b4.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="images/b5.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- 分页器 -->
+    <div class="swiper-pagination"></div>
+
+    <!-- 导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- 滚动条 -->
+    <!--<div class="swiper-scrollbar"></div>-->
+</div>
+<script src="scripts/jquery-1.10.1.min.js"></script>
+<script src="scripts/swiper-3.4.1.jquery.min.js"></script>
+
+<script>
+    var mySwiper=new Swiper(".swiper-container",{
+        direction:"horizontal",
+        loop:true,
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        autoplay: 3000,
+//        用户操作swiper之后，是否禁止autoplay。默认为true：停止
+        autoplayDisableOnInteraction : true,
+//        速度默认为300
+        speed:200,
+        grabCursor : true,
+        freeMode:true,
+//        惯性（设置为true下面的几项才会生效）
+        freeModeMomentum:true,
+//        惯性总距离
+        freeModeMomentumRatio:1,
+//        惯性速度
+        freeModeMomentumVelocityRatio:1,
+//        自动贴合
+        freeModeSticky:true
+    });
+</script>
+</body>
+</html>

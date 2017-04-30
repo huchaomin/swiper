@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>swiper回调函数</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td>onInit(swiper)</td>
+        <td>回调函数，初始化后执行。
+            可选Swiper实例作为参数。</td>
+    </tr>
+    <tr>
+        <td>onTouchStart(swiper, event)</td>
+        <td>回调函数，当碰触到slider时执行。可选Swiper和touchstart事件作为参数</td>
+    </tr>
+    <tr>
+        <td>onTouchMove(swiper, event)</td>
+        <td>回调函数，手指触碰Swiper并滑动（手指）时执行。
+            此时slide不一定会发生移动，比如你手指的移动方向和swiper的切换方向垂直时。对比onSliderMove。</td>
+    </tr>
+    <tr>
+        <td>onTouchEnd(swiper, event)</td>
+        <td>回调函数，当释放slider时执行。（释放即执行）</td>
+    </tr>
+    <tr>
+        <td>onSlideChangeStart(swiper)</td>
+        <td>回调函数，滑块释放时如果触发slider切换则执行。输出的activeIndex是切换后的slide索引</td>
+    </tr>
+    <tr>
+        <td>onSlideChangeEnd(swiper)</td>
+        <td>回调函数，slider切换结束时执行</td>
+    </tr>
+    <tr>
+        <td>onImagesReady(swiper)</td>
+        <td>回调函数，所有内置图像加载完成后执行，同时“updateOnImagesReady”需设置为“true’。</td>
+    </tr>
+    <tr>
+        <td>runCallbacksOnInit</td>
+        <td>初始化时触发 [Transition/SlideChange] [Start/End] 回调函数。
+            这些回调函数会在下次初始化时被清除如果initialSlide不为0。</td>
+    </tr>
+    <tr>
+        <td>onTransitionStart(swiper)</td>
+        <td>回调函数，过渡开始时触发，接收Swiper实例作为参数</td>
+    </tr>
+    <tr>
+        <td>onTransitionEnd(swiper)</td>
+        <td>回调函数，过渡结束时触发，接收Swiper实例作为参数。</td>
+    </tr>
+    <tr>
+        <td>onTouchMoveOpposite(swiper, event)</td>
+        <td>回调函数。当手指触碰Swiper并且没有按照direction设定的方向移动时执行。
+            可选Swiper实例和touchmove事件作为参数。</td>
+    </tr>
+    <tr>
+        <td>onSliderMove(swiper, event)</td>
+        <td>回调函数，手指触碰Swiper并拖动slide时执行。一直拖动，一直执行</td>
+    </tr>
+    <tr>
+        <td>onClick(swiper, event)</td>
+        <td>回调函数，当你点击或轻触Swiper 300ms后执行。
+            接受Swiper实例和touchend事件作为参数。</td>
+    </tr>
+    <tr>
+        <td>onTap(swiper, event)</td>
+        <td>回调函数，当你轻触(tap)Swiper后执行。
+            在移动端，click会有 200~300 ms延迟，所以请用tap代替click作为点击事件。</td>
+    </tr>
+    <tr>
+        <td>onDoubleTap(swiper, event)</td>
+        <td>回调函数，当你两次轻触Swiper 时执行，类似于双击。</td>
+    </tr>
+    <tr>
+        <td>onProgress(swiper, progress)</td>
+        <td>回调函数，当Swiper的progress被改变时执行。接受Swiper实例和progress作为参数（可选）。</td>
+    </tr>
+    <tr>
+        <td>onReachBeginning(swiper)</td>
+        <td>回调函数，Swiper切换到初始化位置时执行。</td>
+    </tr>
+    <tr>
+        <td>onReachEnd(swiper)</td>
+        <td>回调函数，当Swiper切换到最后一个Slide时执行</td>
+    </tr>
+    <tr>
+        <td>onDestroy(swiper)</td>
+        <td>回调函数，销毁Swiper时执行</td>
+    </tr>
+    <tr>
+        <td>onAutoplay(swiper)</td>
+        <td>回调函数，在slide切换开始时执行，有点像onSlideChangeStart，但是只有在自动切换时才有效。</td>
+    </tr>
+    <tr>
+        <td>onAutoplayStart(swiper)</td>
+        <td>回调函数，自动切换开始时执行(由不自动切换进入到自动切换)。</td>
+    </tr>
+    <tr>
+        <td>onAutoplayStop(swiper)</td>
+        <td>回调函数，自动切换结束时执行（由自动切换进入到不自动切换）。</td>
+    </tr>
+    <tr>
+        <td>onLazyImageLoad(swiper, slide, image)</td>
+        <td>回调函数，图片延迟加载开始时执行。slide中每有一张图片被延迟加载就执行一次。
+            接受Swiper实例，延迟加载的slide，延迟加载的img作为参数（可选）</td>
+    </tr>
+    <tr>
+        <td>onLazyImageReady(swiper, slide, image)</td>
+        <td>回调函数，图片延迟加载结束时执行。slide中每有一张图片被延迟加载就执行一次。
+            接受Swiper实例，延迟加载的slide，延迟加载的img作为参数（可选）。</td>
+    </tr>
+    <tr>
+        <td>onSetTransition(swiper, transition)</td>
+        <td>回调函数，每次当Swiper开始过渡动画时持续执行。transtion获取到的是Swiper的speed值。</td>
+    </tr>
+    <tr>
+        <td>onSetTranslate(swiper, translate)</td>
+        <td>回调函数。当设置wrapper的偏移量时执行。可选swiper对象和wrapper的偏移量作为参数。</td>
+    </tr>
+    <tr>
+        <td>onSlideNextStart(swiper)</td>
+        <td>回调函数，滑块释放时如果触发slider向前(右、下)切换则执行。
+            类似于onSlideChangeStart，但规定了方向。</td>
+    </tr>
+    <tr>
+        <td>onSlideNextEnd(swiper)</td>
+        <td>回调函数，slider向前(右、下)切换结束时执行。类似于onSlideChangeEnd，但规定了方向。</td>
+    </tr>
+    <tr>
+        <td>onSlidePrevStart(swiper)</td>
+        <td>回调函数，滑块释放时如果触发slider向后(左、上)切换则执行。
+            类似于onSlideChangeStart，但规定了方向。</td>
+    </tr>
+    <tr>
+        <td>onSlidePrevEnd(swiper)</td>
+        <td>回调函数，slider向后(左、上)切换结束时执行。类似于onSlideChangeEnd，但规定了方向。</td>
+    </tr>
+    <tr>
+        <td>onPaginationRendered(swiper, paginationContainer)</td>
+        <td>回调函数，生成分页器时执行。</td>
+    </tr>
+    <tr>
+        <td>onScroll(swiper, e)</td>
+        <td>当你滚动鼠标时执行</td>
+    </tr>
+</table>
+</body>
+</html>
